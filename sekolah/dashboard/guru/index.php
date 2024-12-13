@@ -2,15 +2,15 @@
 include "../../koneksi.php";
 session_start();
 
-if (!isset($_SESSION['nama'])) {
-    header("Location: ../../login.php");
-    exit;
+if (!isset($_SESSION['role'])||$_SESSION['role']!="guru") {
+  header("Location: ../../index.php");
+  exit;
 }
 
 // Fungsi untuk mengambil pengumuman terbaru
 function getPengumumanTerbaru() {
     global $conn;
-    $result = mysqli_query($conn, "SELECT konten FROM pengumuman ORDER BY tanggal DESC LIMIT 1");
+    $result = mysqli_query($conn, "SELECT deskripsi FROM informasi ORDER BY tanggal_publikasi DESC LIMIT 1");
     $data = mysqli_fetch_assoc($result);
     return $data['konten'] ?? "Tidak ada pengumuman terbaru.";
 }

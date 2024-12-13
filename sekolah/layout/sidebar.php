@@ -32,6 +32,18 @@
                 echo '<a href="../../dashboard/" class="block py-2.5 px-4 hover:bg-gray-700">Pelanggaran Siswa</a>';
                 echo '<a href="../../dashboard/guru/input_str.php" class="block py-2.5 px-4 hover:bg-gray-700">Buat Struktural Kelas</a>';
             }
+            elseif ($_SESSION['role'] == 'siswa') {
+              echo '<a href="../../dashboard/siswa/index.php" class="block py-2.5 px-4 hover:bg-gray-700">Dashboard</a>';
+              echo '<a href="../../dashboard/siswa/cetak_raport.php" class="block py-2.5 px-4 hover:bg-gray-700">Cetak Raport</a>';
+              echo '<a href="../../dashboard/siswa/forum.php" class="block py-2.5 px-4 hover:bg-gray-700">Forum Diskusi</a>';
+              echo '<a href="../../dashboard/siswa/bank_soal.php" class="block py-2.5 px-4 hover:bg-gray-700">Bank Soal</a>';
+              echo '<a href="../../dashboard/siswa/transkrip_nilai.php" class="block py-2.5 px-4 hover:bg-gray-700">Transkrip Nilai</a>';
+              echo '<a href="../../dashboard/siswa/jadwal_pelajaran.php" class="block py-2.5 px-4 hover:bg-gray-700">Jadwal Pelajaran</a>';
+              echo '<a href="../../dashboard/siswa/Ektrakulikuler.php" class="block py-2.5 px-4 hover:bg-gray-700">Ektrakulikuler</a>';
+              echo '<a href="../../dashboard/siswa/evaluasi.php" class="block py-2.5 px-4 hover:bg-gray-700">Evaluasi Guru</a>';
+              echo '<a href="../../dashboard/siswa/Tugas.php" class="block py-2.5 px-4 hover:bg-gray-700">Tugas</a>';
+              echo '<a href="../../dashboard/siswa/Konseling.php" class="block py-2.5 px-4 hover:bg-gray-700">Konseling</a>';
+          }
         } else {
             echo '<a href="#" class="block py-2.5 px-4 hover:bg-gray-700">Login</a>';
         }

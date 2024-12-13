@@ -2,8 +2,8 @@
 include "../../koneksi.php";
 session_start();
 
-if (!isset($_SESSION['nama'])) {
-    header("Location: ../../login.php");
+if (!isset($_SESSION['role'])||$_SESSION['role']!="admin") {
+    header("Location: ../../index.php");
     exit;
 }
 

@@ -2,9 +2,10 @@
 include "../../koneksi.php";
 session_start();
 
-if (!isset($_SESSION['nama'])) {
-    header("Location: ../../login.php");
-    exit;
+
+if (!isset($_SESSION['role'])||$_SESSION['role']!="guru") {
+  header("Location: ../../index.php");
+  exit;
 }
 
 $nama_guru = $_SESSION['nama'];

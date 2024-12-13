@@ -5,7 +5,17 @@ require_once "../../layout/header.php";
 $query = "SELECT * FROM kelas";
 $result = mysqli_query($conn, $query);
 $kelas = mysqli_fetch_assoc($result);
+
+
+session_start();
+if (!isset($_SESSION['role'])||$_SESSION['role']!="guru") {
+    header("Location: ../../index.php");
+    exit;
+  }
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">

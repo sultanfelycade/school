@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['role'])||$_SESSION['role']!="guru") {
+    header("Location: ../../index.php");
+    exit;
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

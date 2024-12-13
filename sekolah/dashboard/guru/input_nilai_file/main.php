@@ -6,6 +6,10 @@
 //     header("Location: login.php");
 //     exit;
 // } blm d
+if (!isset($_SESSION['role'])||$_SESSION['role']!="guru") {
+  header("Location: ../../index.php");
+  exit;
+}
 ?>
 
 <!doctype html>
